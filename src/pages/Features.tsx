@@ -16,7 +16,10 @@ import {
   Shield,
   Zap,
   ArrowRight,
-  CheckCircle
+  CheckCircle,
+  Target,
+  Globe,
+  Rocket
 } from 'lucide-react';
 import featuresBg from '@/assets/features-bg.jpg';
 
@@ -110,6 +113,42 @@ const additionalFeatures = [
   },
 ];
 
+const upcomingFeatures = [
+  {
+    phase: 'Coming Soon',
+    icon: Target,
+    title: 'Advanced Analytics',
+    features: [
+      'Share of shelf trend analysis',
+      'Competitor tracking dashboard',
+      'Predictive route optimization',
+      'Custom report builder'
+    ]
+  },
+  {
+    phase: 'In Development',
+    icon: Zap,
+    title: 'AI Enhancements',
+    features: [
+      'Voice-based data entry',
+      'Planogram compliance checking',
+      'Demand forecasting',
+      'Smart alerts and recommendations'
+    ]
+  },
+  {
+    phase: 'Planned',
+    icon: Globe,
+    title: 'Market Expansion',
+    features: [
+      'Multi-language support',
+      'Regional payment integrations',
+      'Partner API marketplace',
+      'White-label solution'
+    ]
+  }
+];
+
 const industries = [
   { name: 'FMCG Distributors', description: 'For companies with 50-200+ field agents' },
   { name: 'Pharmaceutical Reps', description: 'Medical sales and pharmacy visits' },
@@ -190,12 +229,53 @@ const Features = () => {
         </div>
       </section>
 
-      {/* Industries */}
+      {/* Upcoming Features */}
       <section className="py-24 bg-secondary">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-center gap-4 mb-12">
+            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-chart-1 flex items-center justify-center">
+              <Rocket className="w-6 h-6 text-primary-foreground" />
+            </div>
+            <div className="text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-secondary-foreground">
+                Coming Soon
+              </h2>
+              <p className="text-muted-foreground">What we're building next</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {upcomingFeatures.map((epic, index) => (
+              <GlassCard key={index} className="p-6" hover>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-chart-1 flex items-center justify-center">
+                    <epic.icon className="w-5 h-5 text-primary-foreground" />
+                  </div>
+                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-primary/20 text-primary">
+                    {epic.phase}
+                  </span>
+                </div>
+                <h3 className="text-xl font-semibold text-secondary-foreground mb-4">{epic.title}</h3>
+                <ul className="space-y-2">
+                  {epic.features.map((feature, fIndex) => (
+                    <li key={fIndex} className="flex items-center gap-2 text-muted-foreground text-sm">
+                      <div className="w-1.5 h-1.5 rounded-full bg-chart-1" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </GlassCard>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Industries */}
+      <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-secondary-foreground mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                 Built for African Markets
               </h2>
               <p className="text-muted-foreground text-lg mb-8">
@@ -207,7 +287,7 @@ const Features = () => {
                   <div key={index} className="flex items-start gap-3">
                     <CheckCircle className="w-6 h-6 text-chart-1 flex-shrink-0 mt-0.5" />
                     <div>
-                      <span className="font-semibold text-secondary-foreground">{industry.name}</span>
+                      <span className="font-semibold text-foreground">{industry.name}</span>
                       <p className="text-muted-foreground text-sm">{industry.description}</p>
                     </div>
                   </div>
@@ -215,14 +295,14 @@ const Features = () => {
               </div>
             </div>
 
-            <GlassCard className="p-8">
-              <h3 className="text-2xl font-bold text-secondary-foreground mb-6">Target Markets</h3>
+            <GlassCard variant="light" className="p-8">
+              <h3 className="text-2xl font-bold text-foreground mb-6">Target Markets</h3>
               <div className="space-y-4">
                 {['Kenya', 'Nigeria', 'South Africa', 'Ghana', 'Tanzania'].map((country, index) => (
                   <div key={index} className="flex items-center justify-between">
-                    <span className="text-secondary-foreground">{country}</span>
+                    <span className="text-foreground font-medium">{country}</span>
                     <div className="flex items-center gap-2">
-                      <div className="h-2 w-24 bg-secondary-foreground/20 rounded-full overflow-hidden">
+                      <div className="h-2 w-24 bg-muted rounded-full overflow-hidden">
                         <div 
                           className="h-full bg-gradient-to-r from-primary to-chart-1 rounded-full"
                           style={{ width: `${100 - index * 15}%` }}

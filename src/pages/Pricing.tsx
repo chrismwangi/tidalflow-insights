@@ -127,54 +127,59 @@ const Pricing = () => {
       </section>
 
       {/* Pricing Plans */}
-      <section className="py-24 bg-secondary">
+      <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {plans.map((plan, index) => (
               <div key={index} className="relative">
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
-                    <div className="px-4 py-1 bg-gradient-to-r from-primary to-chart-1 rounded-full text-primary-foreground text-sm font-medium flex items-center gap-1">
+                    <div className="px-4 py-1.5 bg-gradient-to-r from-primary to-chart-1 rounded-full text-primary-foreground text-sm font-semibold flex items-center gap-1.5 shadow-lg">
                       <Zap className="w-4 h-4" />
                       Most Popular
                     </div>
                   </div>
                 )}
                 <GlassCard 
-                  className={`p-8 h-full ${plan.popular ? 'ring-2 ring-primary' : ''}`}
+                  variant="light"
+                  className={`p-8 h-full flex flex-col ${plan.popular ? 'ring-2 ring-primary shadow-xl shadow-primary/20' : 'border-border/50'}`}
                 >
                   <div className="text-center mb-8">
-                    <h3 className="text-2xl font-bold text-secondary-foreground mb-2">
+                    <h3 className="text-2xl font-bold text-foreground mb-2">
                       {plan.name}
                     </h3>
                     <div className="mb-2">
-                      <span className="text-4xl font-bold text-gradient">{plan.price}</span>
+                      <span className="text-4xl font-bold text-primary">{plan.price}</span>
                     </div>
-                    <p className="text-muted-foreground text-sm">{plan.period}</p>
+                    <p className="text-muted-foreground text-sm font-medium">{plan.period}</p>
                     <p className="text-muted-foreground text-sm mt-4">{plan.description}</p>
                   </div>
 
-                  <ul className="space-y-3 mb-8">
+                  <ul className="space-y-3 mb-8 flex-1">
                     {plan.features.map((feature, fIndex) => (
                       <li key={fIndex} className="flex items-center gap-3">
                         {feature.included ? (
-                          <Check className="w-5 h-5 text-chart-1 flex-shrink-0" />
+                          <div className="w-5 h-5 rounded-full bg-chart-1/20 flex items-center justify-center flex-shrink-0">
+                            <Check className="w-3.5 h-3.5 text-chart-1" />
+                          </div>
                         ) : (
-                          <X className="w-5 h-5 text-muted-foreground/40 flex-shrink-0" />
+                          <div className="w-5 h-5 rounded-full bg-muted flex items-center justify-center flex-shrink-0">
+                            <X className="w-3.5 h-3.5 text-muted-foreground" />
+                          </div>
                         )}
-                        <span className={feature.included ? 'text-secondary-foreground' : 'text-muted-foreground/60'}>
+                        <span className={feature.included ? 'text-foreground font-medium' : 'text-muted-foreground'}>
                           {feature.name}
                         </span>
                       </li>
                     ))}
                   </ul>
 
-                  <Link to="/contact" className="block">
+                  <Link to="/contact" className="block mt-auto">
                     <button 
-                      className={`w-full ${
+                      className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 ${
                         plan.popular 
-                          ? 'btn-cta' 
-                          : 'btn-primary-gradient'
+                          ? 'bg-gradient-to-r from-primary to-chart-1 text-primary-foreground hover:shadow-lg hover:shadow-primary/30 hover:scale-[1.02]' 
+                          : 'bg-primary/10 text-primary hover:bg-primary/20 border border-primary/30'
                       }`}
                     >
                       {plan.cta}
@@ -188,10 +193,10 @@ const Pricing = () => {
       </section>
 
       {/* Add-ons */}
-      <section className="py-24 bg-background">
+      <section className="py-24 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-secondary-foreground mb-4">
               Flexible Add-ons
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -201,8 +206,8 @@ const Pricing = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {addons.map((addon, index) => (
-              <GlassCard key={index} variant="light" className="p-6" hover>
-                <h4 className="text-lg font-semibold text-foreground mb-2">{addon.name}</h4>
+              <GlassCard key={index} className="p-6" hover>
+                <h4 className="text-lg font-semibold text-secondary-foreground mb-2">{addon.name}</h4>
                 <div className="mb-3">
                   <span className="text-2xl font-bold text-primary">{addon.price}</span>
                   <span className="text-muted-foreground text-sm ml-2">{addon.period}</span>
