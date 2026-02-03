@@ -196,10 +196,10 @@ const Pricing = () => {
       <section className="py-24 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-secondary-foreground mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Flexible Add-ons
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            <p className="text-white/80 text-lg max-w-2xl mx-auto">
               Enhance your plan with additional capabilities as your needs grow.
             </p>
           </div>
@@ -207,12 +207,12 @@ const Pricing = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {addons.map((addon, index) => (
               <GlassCard key={index} className="p-6" hover>
-                <h4 className="text-lg font-semibold text-secondary-foreground mb-2">{addon.name}</h4>
+                <h4 className="text-lg font-semibold text-white mb-2">{addon.name}</h4>
                 <div className="mb-3">
-                  <span className="text-2xl font-bold text-primary">{addon.price}</span>
-                  <span className="text-muted-foreground text-sm ml-2">{addon.period}</span>
+                  <span className="text-2xl font-bold text-chart-1">{addon.price}</span>
+                  <span className="text-white/70 text-sm ml-2">{addon.period}</span>
                 </div>
-                <p className="text-muted-foreground text-sm">{addon.description}</p>
+                <p className="text-white/80 text-sm">{addon.description}</p>
               </GlassCard>
             ))}
           </div>
