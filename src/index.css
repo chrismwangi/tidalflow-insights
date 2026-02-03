@@ -20,24 +20,24 @@ All colors MUST be HSL.
     --popover: 214 31% 91%;
     --popover-foreground: 222 47% 11%;
 
-    --primary: 200 98% 39%;
-    --primary-foreground: 204 100% 97%;
+    --primary: 174 72% 40%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 215 24% 26%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 220 30% 20%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 215 20% 65%;
-    --muted-foreground: 222 47% 11%;
+    --muted: 215 20% 50%;
+    --muted-foreground: 220 15% 30%;
 
-    --accent: 210 40% 98%;
-    --accent-foreground: 215 19% 34%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 220 30% 20%;
 
     --destructive: 0 72% 50%;
     --destructive-foreground: 0 85% 97%;
 
-    --border: 212 26% 83%;
-    --input: 212 26% 83%;
-    --ring: 200 98% 39%;
+    --border: 212 26% 75%;
+    --input: 212 26% 75%;
+    --ring: 174 72% 40%;
 
     --radius: 0.5rem;
 
@@ -57,11 +57,11 @@ All colors MUST be HSL.
 
     --sidebar-ring: 200 98% 39%;
 
-    /* TidalFlow Brand Colors */
-    --tidal-teal: 174 72% 40%;
+    /* TidalFlow Brand Colors - High Visibility */
+    --tidal-teal: 174 72% 45%;
     --tidal-navy: 222 47% 11%;
-    --tidal-coral: 16 85% 57%;
-    --tidal-ocean: 198 93% 59%;
+    --tidal-coral: 16 90% 55%;
+    --tidal-ocean: 198 93% 55%;
     
     /* Glassmorphism Tokens */
     --glass-bg: 0 0% 100% / 0.1;
@@ -79,11 +79,11 @@ All colors MUST be HSL.
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
-    --chart-1: 198 93% 59%;
+    --chart-1: 174 72% 45%;
 
-    --chart-2: 213 93% 67%;
+    --chart-2: 198 93% 55%;
 
-    --chart-3: 215 20% 65%;
+    --chart-3: 16 90% 55%;
 
     --chart-4: 215 16% 46%;
 
@@ -128,14 +128,14 @@ All colors MUST be HSL.
     --popover: 215 24% 26%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 198 93% 59%;
-    --primary-foreground: 204 80% 15%;
+    --primary: 174 72% 45%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 212 26% 83%;
-    --secondary-foreground: 228 84% 4%;
+    --secondary: 220 30% 20%;
+    --secondary-foreground: 0 0% 100%;
 
     --muted: 215 16% 46%;
-    --muted-foreground: 210 40% 98%;
+    --muted-foreground: 210 20% 75%;
 
     --accent: 228 84% 4%;
     --accent-foreground: 215 20% 65%;
@@ -145,17 +145,17 @@ All colors MUST be HSL.
 
     --border: 215 19% 34%;
     --input: 215 19% 34%;
-    --ring: 198 93% 59%;
+    --ring: 174 72% 45%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 198 93% 59%;
-    --sidebar-primary-foreground: 204 80% 15%;
+    --sidebar-primary: 174 72% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 215 20% 65%;
     --sidebar-accent-foreground: 228 84% 4%;
     --sidebar-border: 215 19% 34%;
-    --sidebar-ring: 198 93% 59%;
-    --chart-1: 199 95% 73%;
-    --chart-2: 211 96% 78%;
+    --sidebar-ring: 174 72% 45%;
+    --chart-1: 174 72% 55%;
+    --chart-2: 198 93% 65%;
     --chart-3: 215 20% 65%;
     --chart-4: 215 16% 46%;
     --chart-5: 215 19% 34%;
