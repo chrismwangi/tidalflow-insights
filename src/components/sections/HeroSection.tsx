@@ -25,7 +25,7 @@ export function HeroSection() {
       <div className="relative container mx-auto px-4 py-20">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary-foreground mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white mb-8">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-chart-1 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-chart-1"></span>
@@ -34,13 +34,13 @@ export function HeroSection() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
             Smart Field Operations &{' '}
             <span className="text-gradient">Route Optimization</span>
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-10 leading-relaxed">
             Transform field sales with share of shelf intelligence, geofencing, 
             smart routing, and real-time merchandising insights.
           </p>
@@ -67,10 +67,10 @@ export function HeroSection() {
               {metrics.map((metric, index) => (
                 <div key={index} className="text-center">
                   <metric.icon className="w-8 h-8 text-chart-1 mx-auto mb-2" />
-                  <div className="text-2xl md:text-3xl font-bold text-primary-foreground mb-1">
+                  <div className="text-2xl md:text-3xl font-bold text-white mb-1">
                     {metric.value}
                   </div>
-                  <div className="text-primary-foreground/60 text-sm">
+                  <div className="text-white/70 text-sm">
                     {metric.label}
                   </div>
                 </div>
@@ -82,8 +82,8 @@ export function HeroSection() {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 rounded-full border-2 border-primary-foreground/30 flex items-start justify-center pt-2">
-          <div className="w-1 h-2 rounded-full bg-primary-foreground/50" />
+        <div className="w-6 h-10 rounded-full border-2 border-white/40 flex items-start justify-center pt-2">
+          <div className="w-1 h-2 rounded-full bg-white/60" />
         </div>
       </div>
     </section>

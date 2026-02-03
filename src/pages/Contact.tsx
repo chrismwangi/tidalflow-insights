@@ -120,7 +120,7 @@ const Contact = () => {
           <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Contact Form */}
             <GlassCard className="p-8">
-              <h2 className="text-2xl font-bold text-secondary-foreground mb-6">
+              <h2 className="text-2xl font-bold text-white mb-6">
                 Send Us a Message
               </h2>
 
@@ -129,16 +129,16 @@ const Contact = () => {
                   <div className="w-16 h-16 rounded-full bg-chart-1/20 flex items-center justify-center mx-auto mb-4">
                     <CheckCircle className="w-8 h-8 text-chart-1" />
                   </div>
-                  <h3 className="text-xl font-semibold text-secondary-foreground mb-2">
+                  <h3 className="text-xl font-semibold text-white mb-2">
                     Message Sent!
                   </h3>
-                  <p className="text-muted-foreground mb-4">
+                  <p className="text-white/70 mb-4">
                     We'll get back to you within 24 hours.
                   </p>
                   <Button 
                     variant="outline" 
                     onClick={exportDataFile}
-                    className="flex items-center gap-2 mx-auto"
+                    className="flex items-center gap-2 mx-auto border-white/30 text-white hover:bg-white/10"
                   >
                     <Download className="w-4 h-4" />
                     Download Data File
@@ -148,21 +148,21 @@ const Contact = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="name" className="text-secondary-foreground">Name *</Label>
+                      <Label htmlFor="name" className="text-white">Name *</Label>
                       <Input
                         id="name"
                         name="name"
                         value={form.name}
                         onChange={handleChange}
                         placeholder="John Mwangi"
-                        className="mt-1"
+                        className="mt-1 bg-white/10 border-white/20 text-white placeholder:text-white/50"
                       />
                       {errors.name && (
                         <p className="text-destructive text-sm mt-1">{errors.name}</p>
                       )}
                     </div>
                     <div>
-                      <Label htmlFor="email" className="text-secondary-foreground">Email *</Label>
+                      <Label htmlFor="email" className="text-white">Email *</Label>
                       <Input
                         id="email"
                         name="email"
@@ -170,7 +170,7 @@ const Contact = () => {
                         value={form.email}
                         onChange={handleChange}
                         placeholder="john@company.co.ke"
-                        className="mt-1"
+                        className="mt-1 bg-white/10 border-white/20 text-white placeholder:text-white/50"
                       />
                       {errors.email && (
                         <p className="text-destructive text-sm mt-1">{errors.email}</p>
@@ -180,31 +180,31 @@ const Contact = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="phone" className="text-secondary-foreground">Phone</Label>
+                      <Label htmlFor="phone" className="text-white">Phone</Label>
                       <Input
                         id="phone"
                         name="phone"
                         value={form.phone}
                         onChange={handleChange}
                         placeholder="+254 7XX XXX XXX"
-                        className="mt-1"
+                        className="mt-1 bg-white/10 border-white/20 text-white placeholder:text-white/50"
                       />
                     </div>
                     <div>
-                      <Label htmlFor="company" className="text-secondary-foreground">Company</Label>
+                      <Label htmlFor="company" className="text-white">Company</Label>
                       <Input
                         id="company"
                         name="company"
                         value={form.company}
                         onChange={handleChange}
                         placeholder="ACME Distributors"
-                        className="mt-1"
+                        className="mt-1 bg-white/10 border-white/20 text-white placeholder:text-white/50"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <Label htmlFor="message" className="text-secondary-foreground">Message *</Label>
+                    <Label htmlFor="message" className="text-white">Message *</Label>
                     <Textarea
                       id="message"
                       name="message"
@@ -212,7 +212,7 @@ const Contact = () => {
                       onChange={handleChange}
                       placeholder="Tell us about your field operations and how we can help..."
                       rows={5}
-                      className="mt-1"
+                      className="mt-1 bg-white/10 border-white/20 text-white placeholder:text-white/50"
                     />
                     {errors.message && (
                       <p className="text-destructive text-sm mt-1">{errors.message}</p>
@@ -241,18 +241,18 @@ const Contact = () => {
             <div className="space-y-6">
               <GlassCard className="p-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-chart-1/20 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-chart-1/30 to-chart-2/30 flex items-center justify-center flex-shrink-0">
                     <Phone className="w-6 h-6 text-chart-1" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-secondary-foreground mb-1">Phone</h3>
+                    <h3 className="font-semibold text-white mb-1">Phone</h3>
                     <a 
                       href="tel:+254732325269"
-                      className="text-chart-1 hover:underline"
+                      className="text-chart-1 hover:underline font-medium"
                     >
                       +254 732 325 269
                     </a>
-                    <p className="text-muted-foreground text-sm mt-1">
+                    <p className="text-white/70 text-sm mt-1">
                       Available Mon-Fri, 8am-6pm EAT
                     </p>
                   </div>
@@ -261,18 +261,18 @@ const Contact = () => {
 
               <GlassCard className="p-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-chart-1/20 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-chart-1/30 to-chart-2/30 flex items-center justify-center flex-shrink-0">
                     <Mail className="w-6 h-6 text-chart-1" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-secondary-foreground mb-1">Email</h3>
+                    <h3 className="font-semibold text-white mb-1">Email</h3>
                     <a 
                       href="mailto:info@tidalflow.co.ke"
-                      className="text-chart-1 hover:underline"
+                      className="text-chart-1 hover:underline font-medium"
                     >
                       info@tidalflow.co.ke
                     </a>
-                    <p className="text-muted-foreground text-sm mt-1">
+                    <p className="text-white/70 text-sm mt-1">
                       We respond within 24 hours
                     </p>
                   </div>
@@ -281,12 +281,12 @@ const Contact = () => {
 
               <GlassCard className="p-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-chart-1/20 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-chart-1/30 to-chart-2/30 flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-6 h-6 text-chart-1" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-secondary-foreground mb-1">Office</h3>
-                    <p className="text-secondary-foreground/80">
+                    <h3 className="font-semibold text-white mb-1">Office</h3>
+                    <p className="text-white/80">
                       Ground Floor Room 021, Ruhan Plaza<br />
                       Kwa Hawa Sukari Main Ave<br />
                       P.O Box 1848, 00232 - Ruiru<br />
@@ -298,12 +298,12 @@ const Contact = () => {
 
               <GlassCard className="p-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-chart-1/20 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-chart-1/30 to-chart-2/30 flex items-center justify-center flex-shrink-0">
                     <Clock className="w-6 h-6 text-chart-1" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-secondary-foreground mb-1">Business Hours</h3>
-                    <p className="text-secondary-foreground/80">
+                    <h3 className="font-semibold text-white mb-1">Business Hours</h3>
+                    <p className="text-white/80">
                       Monday - Friday: 8:00 AM - 6:00 PM<br />
                       Saturday: 9:00 AM - 1:00 PM<br />
                       Sunday: Closed
