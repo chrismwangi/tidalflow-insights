@@ -187,10 +187,10 @@ const Features = () => {
       <section className="py-24 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-secondary-foreground mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Core Capabilities
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            <p className="text-white/80 text-lg max-w-2xl mx-auto">
               Six powerful modules that work together to optimize your field operations.
             </p>
           </div>
@@ -233,14 +233,14 @@ const Features = () => {
       <section className="py-24 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 mb-12">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-chart-1 flex items-center justify-center">
-              <Rocket className="w-6 h-6 text-primary-foreground" />
+            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-chart-1 to-chart-2 flex items-center justify-center">
+              <Rocket className="w-6 h-6 text-white" />
             </div>
             <div className="text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-secondary-foreground">
+              <h2 className="text-3xl md:text-4xl font-bold text-white">
                 Coming Soon
               </h2>
-              <p className="text-muted-foreground">What we're building next</p>
+              <p className="text-white/70">What we're building next</p>
             </div>
           </div>
 
@@ -248,17 +248,17 @@ const Features = () => {
             {upcomingFeatures.map((epic, index) => (
               <GlassCard key={index} className="p-6" hover>
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-chart-1 flex items-center justify-center">
-                    <epic.icon className="w-5 h-5 text-primary-foreground" />
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-chart-1 to-chart-2 flex items-center justify-center">
+                    <epic.icon className="w-5 h-5 text-white" />
                   </div>
-                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-primary/20 text-primary">
+                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-chart-1/30 text-chart-1">
                     {epic.phase}
                   </span>
                 </div>
-                <h3 className="text-xl font-semibold text-secondary-foreground mb-4">{epic.title}</h3>
+                <h3 className="text-xl font-semibold text-white mb-4">{epic.title}</h3>
                 <ul className="space-y-2">
                   {epic.features.map((feature, fIndex) => (
-                    <li key={fIndex} className="flex items-center gap-2 text-muted-foreground text-sm">
+                    <li key={fIndex} className="flex items-center gap-2 text-white/80 text-sm">
                       <div className="w-1.5 h-1.5 rounded-full bg-chart-1" />
                       {feature}
                     </li>

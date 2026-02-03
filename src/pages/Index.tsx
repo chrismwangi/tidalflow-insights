@@ -100,11 +100,11 @@ const Index = () => {
         <div className="absolute inset-0 bg-secondary/95" />
         <div className="relative container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-secondary-foreground mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Everything You Need for{' '}
               <span className="text-gradient">Field Excellence</span>
             </h2>
-            <p className="text-muted-foreground text-lg">
+            <p className="text-white/80 text-lg">
               Comprehensive tools designed for FMCG distributors, pharma reps, and field teams across Africa.
             </p>
           </div>

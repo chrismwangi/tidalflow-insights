@@ -98,10 +98,10 @@ const Team = () => {
       <section className="py-24 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-secondary-foreground mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Leadership Team
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            <p className="text-white/80 text-lg max-w-2xl mx-auto">
               Experienced leaders from Salesforce, leading African startups, and global FMCG companies.
             </p>
           </div>
@@ -109,7 +109,7 @@ const Team = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {team.map((member, index) => (
               <GlassCard key={index} className="p-6 text-center" hover>
-                <div className="w-28 h-28 mx-auto mb-4 rounded-full overflow-hidden ring-4 ring-primary/20">
+                <div className="w-28 h-28 mx-auto mb-4 rounded-full overflow-hidden ring-4 ring-chart-1/30">
                   <img 
                     src={member.image} 
                     alt={member.name}
@@ -117,22 +117,22 @@ const Team = () => {
                     loading="lazy"
                   />
                 </div>
-                <h3 className="text-xl font-semibold text-secondary-foreground mb-1">
+                <h3 className="text-xl font-semibold text-white mb-1">
                   {member.name}
                 </h3>
-                <p className="text-primary text-sm font-medium mb-3">{member.role}</p>
-                <p className="text-muted-foreground text-sm mb-4">{member.bio}</p>
+                <p className="text-chart-1 text-sm font-medium mb-3">{member.role}</p>
+                <p className="text-white/80 text-sm mb-4">{member.bio}</p>
                 <div className="flex justify-center gap-3">
                   <a 
                     href={member.linkedin}
-                    className="w-9 h-9 rounded-full bg-secondary-foreground/10 flex items-center justify-center hover:bg-primary transition-colors"
+                    className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-chart-1 transition-colors text-white"
                     aria-label={`${member.name}'s LinkedIn`}
                   >
                     <Linkedin className="w-4 h-4" />
                   </a>
                   <a 
                     href={member.twitter}
-                    className="w-9 h-9 rounded-full bg-secondary-foreground/10 flex items-center justify-center hover:bg-primary transition-colors"
+                    className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-chart-1 transition-colors text-white"
                     aria-label={`${member.name}'s Twitter`}
                   >
                     <Twitter className="w-4 h-4" />

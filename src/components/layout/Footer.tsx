@@ -6,7 +6,7 @@ const quickLinks = [
   { href: '/pricing', label: 'Pricing' },
   { href: '/demo', label: 'Demo' },
   { href: '/team', label: 'Team' },
-  { href: '/roadmap', label: 'Roadmap' },
+  { href: '/press', label: 'Press' },
   { href: '/contact', label: 'Contact' },
 ];
 
