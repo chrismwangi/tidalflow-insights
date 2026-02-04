@@ -105,21 +105,24 @@ const Pricing = () => {
     <Layout>
       {/* Hero */}
       <section 
-        className="relative py-24 overflow-hidden"
+        className="relative py-28 overflow-hidden"
         style={{ 
           backgroundImage: `url(${featuresBg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
       >
-        <div className="absolute inset-0 hero-gradient opacity-95" />
+        <div className="absolute inset-0 hero-gradient opacity-97" />
         <div className="relative container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-4 block">
+              Pricing
+            </span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
               Simple, Transparent{' '}
               <span className="text-gradient">Pricing</span>
             </h1>
-            <p className="text-primary-foreground/80 text-lg leading-relaxed">
+            <p className="text-primary-foreground/80 text-xl leading-relaxed">
               Choose the plan that fits your team size. All plans include core features with flexible add-ons.
             </p>
           </div>
@@ -127,47 +130,50 @@ const Pricing = () => {
       </section>
 
       {/* Pricing Plans */}
-      <section className="py-24 bg-background">
+      <section className="py-28 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
             {plans.map((plan, index) => (
               <div key={index} className="relative">
                 {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
-                    <div className="px-4 py-1.5 bg-gradient-to-r from-primary to-chart-1 rounded-full text-primary-foreground text-sm font-semibold flex items-center gap-1.5 shadow-lg">
+                  <div className="absolute -top-5 left-1/2 -translate-x-1/2 z-10">
+                    <div className="px-5 py-2 bg-gradient-to-r from-primary to-chart-2 rounded-full text-primary-foreground text-sm font-bold flex items-center gap-2 shadow-lg shadow-primary/40">
                       <Zap className="w-4 h-4" />
                       Most Popular
                     </div>
                   </div>
                 )}
-                <GlassCard 
-                  variant="light"
-                  className={`p-8 h-full flex flex-col ${plan.popular ? 'ring-2 ring-primary shadow-xl shadow-primary/20' : 'border-border/50'}`}
+                <div 
+                  className={`relative h-full rounded-2xl p-10 flex flex-col transition-all duration-300 hover:-translate-y-2 ${
+                    plan.popular 
+                      ? 'bg-card ring-2 ring-primary shadow-2xl shadow-primary/20' 
+                      : 'bg-card border border-border shadow-lg hover:shadow-xl'
+                  }`}
                 >
-                  <div className="text-center mb-8">
-                    <h3 className="text-2xl font-bold text-foreground mb-2">
+                  <div className="text-center mb-10">
+                    <h3 className="text-2xl font-bold text-foreground mb-3">
                       {plan.name}
                     </h3>
                     <div className="mb-2">
-                      <span className="text-4xl font-bold text-primary">{plan.price}</span>
+                      <span className="text-5xl font-extrabold text-primary">{plan.price}</span>
                     </div>
                     <p className="text-muted-foreground text-sm font-medium">{plan.period}</p>
                     <p className="text-muted-foreground text-sm mt-4">{plan.description}</p>
                   </div>
 
-                  <ul className="space-y-3 mb-8 flex-1">
+                  <ul className="space-y-4 mb-10 flex-1">
                     {plan.features.map((feature, fIndex) => (
                       <li key={fIndex} className="flex items-center gap-3">
                         {feature.included ? (
-                          <div className="w-5 h-5 rounded-full bg-chart-1/20 flex items-center justify-center flex-shrink-0">
-                            <Check className="w-3.5 h-3.5 text-chart-1" />
+                          <div className="w-6 h-6 rounded-full bg-primary/15 flex items-center justify-center flex-shrink-0">
+                            <Check className="w-3.5 h-3.5 text-primary" />
                           </div>
                         ) : (
-                          <div className="w-5 h-5 rounded-full bg-muted flex items-center justify-center flex-shrink-0">
-                            <X className="w-3.5 h-3.5 text-muted-foreground" />
+                          <div className="w-6 h-6 rounded-full bg-muted/50 flex items-center justify-center flex-shrink-0">
+                            <X className="w-3.5 h-3.5 text-muted-foreground/50" />
                           </div>
                         )}
-                        <span className={feature.included ? 'text-foreground font-medium' : 'text-muted-foreground'}>
+                        <span className={`text-sm ${feature.included ? 'text-foreground font-medium' : 'text-muted-foreground'}`}>
                           {feature.name}
                         </span>
                       </li>
@@ -176,16 +182,16 @@ const Pricing = () => {
 
                   <Link to="/contact" className="block mt-auto">
                     <button 
-                      className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 ${
+                      className={`w-full py-4 px-6 rounded-xl font-bold transition-all duration-300 ${
                         plan.popular 
-                          ? 'bg-gradient-to-r from-primary to-chart-1 text-primary-foreground hover:shadow-lg hover:shadow-primary/30 hover:scale-[1.02]' 
-                          : 'bg-primary/10 text-primary hover:bg-primary/20 border border-primary/30'
+                          ? 'bg-gradient-to-r from-primary to-chart-2 text-primary-foreground hover:shadow-lg hover:shadow-primary/40 hover:-translate-y-0.5' 
+                          : 'bg-primary/10 text-primary hover:bg-primary/20 border-2 border-primary/30'
                       }`}
                     >
                       {plan.cta}
                     </button>
                   </Link>
-                </GlassCard>
+                </div>
               </div>
             ))}
           </div>
@@ -193,26 +199,29 @@ const Pricing = () => {
       </section>
 
       {/* Add-ons */}
-      <section className="py-24 bg-secondary">
+      <section className="py-28 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-4 block">
+              Add-ons
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
               Flexible Add-ons
             </h2>
-            <p className="text-white/80 text-lg max-w-2xl mx-auto">
+            <p className="text-primary-foreground/75 text-lg max-w-2xl mx-auto">
               Enhance your plan with additional capabilities as your needs grow.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {addons.map((addon, index) => (
-              <GlassCard key={index} className="p-6" hover>
-                <h4 className="text-lg font-semibold text-white mb-2">{addon.name}</h4>
-                <div className="mb-3">
-                  <span className="text-2xl font-bold text-chart-1">{addon.price}</span>
-                  <span className="text-white/70 text-sm ml-2">{addon.period}</span>
+              <GlassCard key={index} className="p-8" hover>
+                <h4 className="text-xl font-bold text-primary-foreground mb-3">{addon.name}</h4>
+                <div className="mb-4">
+                  <span className="text-3xl font-bold text-primary">{addon.price}</span>
+                  <span className="text-primary-foreground/60 text-sm ml-2">{addon.period}</span>
                 </div>
-                <p className="text-white/80 text-sm">{addon.description}</p>
+                <p className="text-primary-foreground/75 text-sm leading-relaxed">{addon.description}</p>
               </GlassCard>
             ))}
           </div>
@@ -220,23 +229,26 @@ const Pricing = () => {
       </section>
 
       {/* FAQ CTA */}
-      <section className="py-24 hero-gradient">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
+      <section className="py-28 hero-gradient relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-primary/15 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-chart-2/10 rounded-full blur-3xl" />
+        
+        <div className="relative container mx-auto px-4 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
             Have Questions About Pricing?
           </h2>
-          <p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto mb-10">
+          <p className="text-primary-foreground/80 text-xl max-w-2xl mx-auto mb-12">
             Our team is ready to help you find the perfect plan for your field operations.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-5 justify-center">
             <Link to="/contact">
-              <button className="btn-cta flex items-center justify-center gap-2 w-full sm:w-auto">
+              <button className="btn-cta flex items-center justify-center gap-3 w-full sm:w-auto text-lg">
                 Contact Sales
                 <ArrowRight className="w-5 h-5" />
               </button>
             </Link>
             <Link to="/demo">
-              <button className="btn-outline-light flex items-center justify-center gap-2 w-full sm:w-auto">
+              <button className="btn-outline-light flex items-center justify-center gap-3 w-full sm:w-auto text-lg">
                 Try Free Demo
               </button>
             </Link>
