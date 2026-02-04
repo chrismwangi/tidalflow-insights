@@ -18,7 +18,7 @@ export function GlassCard({
     <div 
       className={cn(
         variant === 'dark' ? 'glass-card' : 'glass-card-light',
-        hover && 'transition-all duration-300 hover:scale-[1.02] hover:shadow-xl',
+        hover && 'transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl cursor-pointer',
         className
       )}
     >

@@ -90,34 +90,37 @@ const Index = () => {
 
       {/* Features Overview */}
       <section 
-        className="relative py-24 overflow-hidden"
+        className="relative py-28 overflow-hidden"
         style={{ 
           backgroundImage: `url(${featuresBg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
       >
-        <div className="absolute inset-0 bg-secondary/95" />
+        <div className="absolute inset-0 bg-secondary/97" />
         <div className="relative container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-4 block">
+              Our Features
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
               Everything You Need for{' '}
               <span className="text-gradient">Field Excellence</span>
             </h2>
-            <p className="text-white/80 text-lg">
+            <p className="text-primary-foreground/75 text-lg">
               Comprehensive tools designed for FMCG distributors, pharma reps, and field teams across Africa.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <FeatureCard key={index} {...feature} />
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-16">
             <Link to="/features">
-              <button className="btn-primary-gradient flex items-center gap-2 mx-auto">
+              <button className="btn-primary-gradient flex items-center gap-3 mx-auto">
                 View All Features
                 <ArrowRight className="w-5 h-5" />
               </button>
@@ -127,35 +130,40 @@ const Index = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-24 bg-background">
+      <section className="py-28 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-4 block">
+                Why TidalFlow
+              </span>
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                 Why Choose <span className="text-gradient">TidalFlow</span>?
               </h2>
-              <p className="text-muted-foreground text-lg mb-8">
+              <p className="text-muted-foreground text-lg mb-10">
                 Built specifically for African field operations, TidalFlow understands the unique challenges of emerging markets.
               </p>
               
-              <ul className="space-y-4">
+              <ul className="space-y-5">
                 {benefits.map((benefit, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground">{benefit}</span>
+                  <li key={index} className="flex items-start gap-4 group">
+                    <div className="w-7 h-7 rounded-full bg-primary/15 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/25 transition-colors">
+                      <CheckCircle className="w-4 h-4 text-primary" />
+                    </div>
+                    <span className="text-foreground font-medium pt-0.5">{benefit}</span>
                   </li>
                 ))}
               </ul>
 
-              <div className="mt-10 flex flex-col sm:flex-row gap-4">
+              <div className="mt-12 flex flex-col sm:flex-row gap-4">
                 <Link to="/pricing">
-                  <button className="btn-cta flex items-center gap-2">
+                  <button className="btn-cta flex items-center gap-3">
                     See Pricing
                     <ArrowRight className="w-5 h-5" />
                   </button>
                 </Link>
                 <Link to="/demo">
-                  <button className="btn-outline-light bg-secondary text-secondary-foreground border-border hover:bg-accent">
+                  <button className="px-8 py-4 rounded-xl font-semibold bg-secondary text-secondary-foreground hover:bg-secondary/90 transition-colors">
                     Try Demo
                   </button>
                 </Link>
@@ -163,37 +171,44 @@ const Index = () => {
             </div>
 
             <div className="relative">
-              <GlassCard variant="light" className="p-8">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-chart-1 flex items-center justify-center">
-                    <Smartphone className="w-8 h-8 text-primary-foreground" />
+              <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 to-chart-2/20 rounded-3xl blur-2xl" />
+              <GlassCard variant="light" className="relative p-10">
+                <div className="flex items-center gap-5 mb-8">
+                  <div className="w-18 h-18 rounded-2xl bg-gradient-to-br from-primary to-chart-2 flex items-center justify-center shadow-lg shadow-primary/30">
+                    <Smartphone className="w-9 h-9 text-primary-foreground" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-foreground">Mobile-First Design</h3>
+                    <h3 className="text-2xl font-bold text-foreground">Mobile-First Design</h3>
                     <p className="text-muted-foreground">Works offline, syncs online</p>
                   </div>
                 </div>
-                <div className="space-y-4">
-                  <div className="h-3 bg-muted rounded-full overflow-hidden">
-                    <div className="h-full w-[85%] bg-gradient-to-r from-primary to-chart-1 rounded-full" />
+                <div className="space-y-6">
+                  <div>
+                    <div className="flex justify-between text-sm mb-2">
+                      <span className="text-muted-foreground font-medium">Route Efficiency</span>
+                      <span className="text-primary font-bold">85%</span>
+                    </div>
+                    <div className="h-3 bg-muted rounded-full overflow-hidden">
+                      <div className="h-full w-[85%] bg-gradient-to-r from-primary to-chart-2 rounded-full" />
+                    </div>
                   </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Route Efficiency</span>
-                    <span className="text-primary font-semibold">85%</span>
+                  <div>
+                    <div className="flex justify-between text-sm mb-2">
+                      <span className="text-muted-foreground font-medium">Product Recognition</span>
+                      <span className="text-primary font-bold">95%</span>
+                    </div>
+                    <div className="h-3 bg-muted rounded-full overflow-hidden">
+                      <div className="h-full w-[95%] bg-gradient-to-r from-primary to-chart-2 rounded-full" />
+                    </div>
                   </div>
-                  <div className="h-3 bg-muted rounded-full overflow-hidden">
-                    <div className="h-full w-[95%] bg-gradient-to-r from-primary to-chart-1 rounded-full" />
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Product Recognition</span>
-                    <span className="text-primary font-semibold">95%</span>
-                  </div>
-                  <div className="h-3 bg-muted rounded-full overflow-hidden">
-                    <div className="h-full w-[99%] bg-gradient-to-r from-primary to-chart-1 rounded-full" />
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Geofence Accuracy</span>
-                    <span className="text-primary font-semibold">99.8%</span>
+                  <div>
+                    <div className="flex justify-between text-sm mb-2">
+                      <span className="text-muted-foreground font-medium">Geofence Accuracy</span>
+                      <span className="text-primary font-bold">99.8%</span>
+                    </div>
+                    <div className="h-3 bg-muted rounded-full overflow-hidden">
+                      <div className="h-full w-[99%] bg-gradient-to-r from-primary to-chart-2 rounded-full" />
+                    </div>
                   </div>
                 </div>
               </GlassCard>
@@ -203,23 +218,26 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 hero-gradient">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
+      <section className="py-28 hero-gradient relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-primary/15 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-chart-2/10 rounded-full blur-3xl" />
+        
+        <div className="relative container mx-auto px-4 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
             Ready to Transform Your Field Operations?
           </h2>
-          <p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto mb-10">
+          <p className="text-primary-foreground/80 text-xl max-w-2xl mx-auto mb-12">
             Join leading FMCG distributors across Africa who trust TidalFlow for their field sales excellence.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-5 justify-center">
             <Link to="/contact">
-              <button className="btn-cta flex items-center justify-center gap-2 w-full sm:w-auto">
+              <button className="btn-cta flex items-center justify-center gap-3 w-full sm:w-auto text-lg">
                 Get Started Today
                 <ArrowRight className="w-5 h-5" />
               </button>
             </Link>
             <Link to="/demo">
-              <button className="btn-outline-light flex items-center justify-center gap-2 w-full sm:w-auto">
+              <button className="btn-outline-light flex items-center justify-center gap-3 w-full sm:w-auto text-lg">
                 Try Interactive Demo
               </button>
             </Link>

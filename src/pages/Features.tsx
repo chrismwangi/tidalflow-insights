@@ -162,21 +162,24 @@ const Features = () => {
     <Layout>
       {/* Hero */}
       <section 
-        className="relative py-24 overflow-hidden"
+        className="relative py-28 overflow-hidden"
         style={{ 
           backgroundImage: `url(${featuresBg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
       >
-        <div className="absolute inset-0 hero-gradient opacity-95" />
+        <div className="absolute inset-0 hero-gradient opacity-97" />
         <div className="relative container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-4 block">
+              Features
+            </span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
               Powerful Features for{' '}
               <span className="text-gradient">Field Excellence</span>
             </h1>
-            <p className="text-primary-foreground/80 text-lg leading-relaxed">
+            <p className="text-primary-foreground/80 text-xl leading-relaxed">
               Comprehensive tools designed to transform your field sales operations with AI-powered insights, real-time tracking, and smart automation.
             </p>
           </div>
@@ -184,18 +187,21 @@ const Features = () => {
       </section>
 
       {/* Core Features */}
-      <section className="py-24 bg-secondary">
+      <section className="py-28 bg-secondary">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <div className="text-center mb-20">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-4 block">
+              Core Capabilities
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
               Core Capabilities
             </h2>
-            <p className="text-white/80 text-lg max-w-2xl mx-auto">
+            <p className="text-primary-foreground/75 text-lg max-w-2xl mx-auto">
               Six powerful modules that work together to optimize your field operations.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {coreFeatures.map((feature, index) => (
               <FeatureCard key={index} {...feature} />
             ))}
@@ -204,10 +210,13 @@ const Features = () => {
       </section>
 
       {/* Additional Features */}
-      <section className="py-24 bg-background">
+      <section className="py-28 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <div className="text-center mb-20">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-4 block">
+              More Features
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
               Additional Features
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -215,14 +224,14 @@ const Features = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {additionalFeatures.map((feature, index) => (
-              <GlassCard key={index} variant="light" className="p-6" hover>
-                <div className="w-12 h-12 mb-4 rounded-xl bg-gradient-to-br from-primary/10 to-chart-1/10 flex items-center justify-center">
-                  <feature.icon className="w-6 h-6 text-primary" />
+              <GlassCard key={index} variant="light" className="p-8" hover>
+                <div className="w-14 h-14 mb-6 rounded-2xl bg-gradient-to-br from-primary/15 to-chart-2/15 flex items-center justify-center">
+                  <feature.icon className="w-7 h-7 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">{feature.title}</h3>
-                <p className="text-muted-foreground text-sm">{feature.description}</p>
+                <h3 className="text-xl font-bold text-foreground mb-3">{feature.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
               </GlassCard>
             ))}
           </div>
@@ -230,36 +239,36 @@ const Features = () => {
       </section>
 
       {/* Upcoming Features */}
-      <section className="py-24 bg-secondary">
+      <section className="py-28 bg-secondary">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center gap-4 mb-12">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-chart-1 to-chart-2 flex items-center justify-center">
-              <Rocket className="w-6 h-6 text-white" />
+          <div className="flex items-center justify-center gap-5 mb-16">
+            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-chart-2 flex items-center justify-center shadow-lg shadow-primary/30">
+              <Rocket className="w-7 h-7 text-primary-foreground" />
             </div>
             <div className="text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-white">
+              <h2 className="text-4xl md:text-5xl font-bold text-primary-foreground">
                 Coming Soon
               </h2>
-              <p className="text-white/70">What we're building next</p>
+              <p className="text-primary-foreground/60 mt-2">What we're building next</p>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
             {upcomingFeatures.map((epic, index) => (
-              <GlassCard key={index} className="p-6" hover>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-chart-1 to-chart-2 flex items-center justify-center">
-                    <epic.icon className="w-5 h-5 text-white" />
+              <GlassCard key={index} className="p-8" hover>
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-chart-2 flex items-center justify-center">
+                    <epic.icon className="w-6 h-6 text-primary-foreground" />
                   </div>
-                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-chart-1/30 text-chart-1">
+                  <span className="px-4 py-1.5 rounded-full text-xs font-bold bg-primary/25 text-primary">
                     {epic.phase}
                   </span>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-4">{epic.title}</h3>
-                <ul className="space-y-2">
+                <h3 className="text-2xl font-bold text-primary-foreground mb-5">{epic.title}</h3>
+                <ul className="space-y-3">
                   {epic.features.map((feature, fIndex) => (
-                    <li key={fIndex} className="flex items-center gap-2 text-white/80 text-sm">
-                      <div className="w-1.5 h-1.5 rounded-full bg-chart-1" />
+                    <li key={fIndex} className="flex items-center gap-3 text-primary-foreground/80">
+                      <div className="w-2 h-2 rounded-full bg-primary" />
                       {feature}
                     </li>
                   ))}
@@ -271,23 +280,28 @@ const Features = () => {
       </section>
 
       {/* Industries */}
-      <section className="py-24 bg-background">
+      <section className="py-28 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-4 block">
+                Industries
+              </span>
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                 Built for African Markets
               </h2>
-              <p className="text-muted-foreground text-lg mb-8">
+              <p className="text-muted-foreground text-lg mb-10">
                 TidalFlow is designed to handle the unique challenges of emerging markets, including intermittent connectivity, diverse retail environments, and rapidly growing field teams.
               </p>
               
-              <div className="space-y-4">
+              <div className="space-y-5">
                 {industries.map((industry, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-chart-1 flex-shrink-0 mt-0.5" />
+                  <div key={index} className="flex items-start gap-4 group">
+                    <div className="w-7 h-7 rounded-full bg-primary/15 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/25 transition-colors mt-0.5">
+                      <CheckCircle className="w-4 h-4 text-primary" />
+                    </div>
                     <div>
-                      <span className="font-semibold text-foreground">{industry.name}</span>
+                      <span className="font-bold text-foreground">{industry.name}</span>
                       <p className="text-muted-foreground text-sm">{industry.description}</p>
                     </div>
                   </div>
@@ -295,47 +309,53 @@ const Features = () => {
               </div>
             </div>
 
-            <GlassCard variant="light" className="p-8">
-              <h3 className="text-2xl font-bold text-foreground mb-6">Target Markets</h3>
-              <div className="space-y-4">
-                {['Kenya', 'Nigeria', 'South Africa', 'Ghana', 'Tanzania'].map((country, index) => (
-                  <div key={index} className="flex items-center justify-between">
-                    <span className="text-foreground font-medium">{country}</span>
-                    <div className="flex items-center gap-2">
-                      <div className="h-2 w-24 bg-muted rounded-full overflow-hidden">
-                        <div 
-                          className="h-full bg-gradient-to-r from-primary to-chart-1 rounded-full"
-                          style={{ width: `${100 - index * 15}%` }}
-                        />
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 to-chart-2/20 rounded-3xl blur-2xl" />
+              <GlassCard variant="light" className="relative p-10">
+                <h3 className="text-2xl font-bold text-foreground mb-8">Target Markets</h3>
+                <div className="space-y-5">
+                  {['Kenya', 'Nigeria', 'South Africa', 'Ghana', 'Tanzania'].map((country, index) => (
+                    <div key={index} className="flex items-center justify-between">
+                      <span className="text-foreground font-semibold">{country}</span>
+                      <div className="flex items-center gap-3">
+                        <div className="h-3 w-28 bg-muted rounded-full overflow-hidden">
+                          <div 
+                            className="h-full bg-gradient-to-r from-primary to-chart-2 rounded-full"
+                            style={{ width: `${100 - index * 12}%` }}
+                          />
+                        </div>
+                        <span className="text-primary text-sm font-bold w-14 text-right">Active</span>
                       </div>
-                      <span className="text-chart-1 text-sm font-medium">Active</span>
                     </div>
-                  </div>
-                ))}
-              </div>
-            </GlassCard>
+                  ))}
+                </div>
+              </GlassCard>
+            </div>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-24 hero-gradient">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
+      <section className="py-28 hero-gradient relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-primary/15 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-chart-2/10 rounded-full blur-3xl" />
+        
+        <div className="relative container mx-auto px-4 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
             See These Features in Action
           </h2>
-          <p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto mb-10">
+          <p className="text-primary-foreground/80 text-xl max-w-2xl mx-auto mb-12">
             Try our interactive demo to experience how TidalFlow can transform your field operations.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-5 justify-center">
             <Link to="/demo">
-              <button className="btn-cta flex items-center justify-center gap-2 w-full sm:w-auto">
+              <button className="btn-cta flex items-center justify-center gap-3 w-full sm:w-auto text-lg">
                 Try Interactive Demo
                 <ArrowRight className="w-5 h-5" />
               </button>
             </Link>
             <Link to="/pricing">
-              <button className="btn-outline-light flex items-center justify-center gap-2 w-full sm:w-auto">
+              <button className="btn-outline-light flex items-center justify-center gap-3 w-full sm:w-auto text-lg">
                 View Pricing
               </button>
             </Link>
